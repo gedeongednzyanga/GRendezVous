@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Rendevous" targetNamespace="http://tempuri.org/DataSet_Rendevous.xsd" xmlns:mstns="http://tempuri.org/DataSet_Rendevous.xsd" xmlns="http://tempuri.org/DataSet_Rendevous.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="g_rendezvousConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="g_rendezvousConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Grendezvous.Properties.Settings.GlobalReference.Default.g_rendezvousConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="getremdevousTableAdapter" GeneratorDataComponentClassName="getremdevousTableAdapter" Name="getremdevous" UserDataComponentName="getremdevousTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="g_rendezvousConnectionString (Settings)" DbObjectName="g_rendezvous.dbo.getremdevous" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, date_, heure, statut, ida, agent, idm, malade, age, adresse, telephone, medicaments, jours, etat FROM dbo.getremdevous</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="date_" DataSetColumn="date_" />
+              <Mapping SourceColumn="heure" DataSetColumn="heure" />
+              <Mapping SourceColumn="statut" DataSetColumn="statut" />
+              <Mapping SourceColumn="ida" DataSetColumn="ida" />
+              <Mapping SourceColumn="agent" DataSetColumn="agent" />
+              <Mapping SourceColumn="idm" DataSetColumn="idm" />
+              <Mapping SourceColumn="malade" DataSetColumn="malade" />
+              <Mapping SourceColumn="age" DataSetColumn="age" />
+              <Mapping SourceColumn="adresse" DataSetColumn="adresse" />
+              <Mapping SourceColumn="telephone" DataSetColumn="telephone" />
+              <Mapping SourceColumn="medicaments" DataSetColumn="medicaments" />
+              <Mapping SourceColumn="jours" DataSetColumn="jours" />
+              <Mapping SourceColumn="etat" DataSetColumn="etat" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Rendevous" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Rendevous" msprop:Generator_UserDSName="DataSet_Rendevous">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="getremdevous" msprop:Generator_TableClassName="getremdevousDataTable" msprop:Generator_TableVarName="tablegetremdevous" msprop:Generator_TablePropName="getremdevous" msprop:Generator_RowDeletingName="getremdevousRowDeleting" msprop:Generator_RowChangingName="getremdevousRowChanging" msprop:Generator_RowEvHandlerName="getremdevousRowChangeEventHandler" msprop:Generator_RowDeletedName="getremdevousRowDeleted" msprop:Generator_UserTableName="getremdevous" msprop:Generator_RowChangedName="getremdevousRowChanged" msprop:Generator_RowEvArgName="getremdevousRowChangeEvent" msprop:Generator_RowClassName="getremdevousRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="date_" msprop:Generator_ColumnVarNameInTable="columndate_" msprop:Generator_ColumnPropNameInRow="date_" msprop:Generator_ColumnPropNameInTable="date_Column" msprop:Generator_UserColumnName="date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="heure" msprop:Generator_ColumnVarNameInTable="columnheure" msprop:Generator_ColumnPropNameInRow="heure" msprop:Generator_ColumnPropNameInTable="heureColumn" msprop:Generator_UserColumnName="heure" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="statut" msprop:Generator_ColumnVarNameInTable="columnstatut" msprop:Generator_ColumnPropNameInRow="statut" msprop:Generator_ColumnPropNameInTable="statutColumn" msprop:Generator_UserColumnName="statut" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ida" msprop:Generator_ColumnVarNameInTable="columnida" msprop:Generator_ColumnPropNameInRow="ida" msprop:Generator_ColumnPropNameInTable="idaColumn" msprop:Generator_UserColumnName="ida" type="xs:int" />
+              <xs:element name="agent" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnagent" msprop:Generator_ColumnPropNameInRow="agent" msprop:Generator_ColumnPropNameInTable="agentColumn" msprop:Generator_UserColumnName="agent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="152" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idm" msprop:Generator_ColumnVarNameInTable="columnidm" msprop:Generator_ColumnPropNameInRow="idm" msprop:Generator_ColumnPropNameInTable="idmColumn" msprop:Generator_UserColumnName="idm" type="xs:int" />
+              <xs:element name="malade" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmalade" msprop:Generator_ColumnPropNameInRow="malade" msprop:Generator_ColumnPropNameInTable="maladeColumn" msprop:Generator_UserColumnName="malade" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="age" msprop:Generator_ColumnVarNameInTable="columnage" msprop:Generator_ColumnPropNameInRow="age" msprop:Generator_ColumnPropNameInTable="ageColumn" msprop:Generator_UserColumnName="age" type="xs:int" minOccurs="0" />
+              <xs:element name="adresse" msprop:Generator_ColumnVarNameInTable="columnadresse" msprop:Generator_ColumnPropNameInRow="adresse" msprop:Generator_ColumnPropNameInTable="adresseColumn" msprop:Generator_UserColumnName="adresse" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telephone" msprop:Generator_ColumnVarNameInTable="columntelephone" msprop:Generator_ColumnPropNameInRow="telephone" msprop:Generator_ColumnPropNameInTable="telephoneColumn" msprop:Generator_UserColumnName="telephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="medicaments" msprop:Generator_ColumnVarNameInTable="columnmedicaments" msprop:Generator_ColumnPropNameInRow="medicaments" msprop:Generator_ColumnPropNameInTable="medicamentsColumn" msprop:Generator_UserColumnName="medicaments" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="jours" msprop:Generator_ColumnVarNameInTable="columnjours" msprop:Generator_ColumnPropNameInRow="jours" msprop:Generator_ColumnPropNameInTable="joursColumn" msprop:Generator_UserColumnName="jours" type="xs:int" minOccurs="0" />
+              <xs:element name="etat" msprop:Generator_ColumnVarNameInTable="columnetat" msprop:Generator_ColumnPropNameInRow="etat" msprop:Generator_ColumnPropNameInTable="etatColumn" msprop:Generator_UserColumnName="etat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:getremdevous" />
+      <xs:field xpath="mstns:id" />
+      <xs:field xpath="mstns:ida" />
+      <xs:field xpath="mstns:idm" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
