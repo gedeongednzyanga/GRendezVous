@@ -98,5 +98,30 @@ namespace Grendezvous.Users
         {
             delete(3);
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labadresse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labnom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuSeparator1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
