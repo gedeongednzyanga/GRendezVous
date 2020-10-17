@@ -102,3 +102,4 @@ C:\Users\G-PC\Documents\Visual Studio 2019\Projects\Grendezvous\Grendezvous\obj\
 C:\Users\G-PC\Documents\Visual Studio 2019\Projects\Grendezvous\Grendezvous\obj\Debug\Grendezvous.exe
 C:\Users\G-PC\Documents\Visual Studio 2019\Projects\Grendezvous\Grendezvous\obj\Debug\Grendezvous.pdb
 C:\Users\G-PC\Documents\Visual Studio 2019\Projects\Grendezvous\Grendezvous\obj\Debug\Grendezvous.csprojAssemblyReference.cache
+C:\Users\G-PC\Documents\Visual Studio 2019\Projects\Grendezvous\Grendezvous\obj\Debug\Grendezvous.Forms.Preview.resources

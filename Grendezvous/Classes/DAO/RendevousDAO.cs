@@ -345,6 +345,82 @@ namespace Grendezvous.Classes.DAO
             return nbr;
         }
 
+        public void LastRendePatient(int idp, Label dateR, Label agentR)
+        {
+            try
+            {
+                if (this.con.State == ConnectionState.Closed)
+                    this.con.Open();
+                using (IDbCommand cmd = this.con.CreateCommand())
+                {
+                    cmd.CommandText = "RENDE_Last";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@idp", 10, DbType.Int32, idp));
+                    IDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr["date_"]== DBNull.Value)
+                        {
+                            dateR.Text = "Aucun rendez-vous déjà fait.";
+                            agentR.Text = "Aucun docteur.";
+                        }
+                        else
+                        {
+                            dateR.Text =DateTime.Parse( dr["date_"].ToString()).ToShortDateString() + " à " + dr["heure"].ToString();
+                            agentR.Text = dr["agent"].ToString();
+                        } 
+                    }
+                    cmd.Dispose();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur survenue...");
+            }
+            finally
+            {
+                this.con.Close();
+            }
+        }
+
+        public void TotalRendePatient(int idp, Label totalR, Label totalDoc)
+        {
+            try
+            {
+                if (this.con.State == ConnectionState.Closed)
+                    this.con.Open();
+                using (IDbCommand cmd = this.con.CreateCommand())
+                {
+                    cmd.CommandText = "RENDE_TotRendeP";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@idp", 10, DbType.Int32, idp));
+                    IDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        if (dr["nbre"] == DBNull.Value)
+                        {
+                            totalR.Text = "0 visite";
+                            totalDoc.Text = "0 visite";
+                        }
+                        else
+                        {
+                            totalR.Text = dr["nbre"].ToString()+" visite(s).";
+                            totalDoc.Text = dr["nbredocteur"].ToString()+" docteur(s)";
+                        }
+                    }
+                    cmd.Dispose();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur survenue...");
+            }
+            finally
+            {
+                this.con.Close();
+            }
+        }
+
         public void Call_Report(int id, ReportViewer reportView, string path)
         {
             try

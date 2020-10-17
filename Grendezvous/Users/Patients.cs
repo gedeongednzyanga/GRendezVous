@@ -39,6 +39,8 @@ namespace Grendezvous.Users
             labmedi.Text = gridPatient["Column7", i].Value.ToString();
             labjour.Text = gridPatient["Column8", i].Value.ToString();
             labetat.Text = gridPatient["Column9", i].Value.ToString();
+            new RendevousDAO().LastRendePatient(idPatient, label12, label15);
+            new RendevousDAO().TotalRendePatient(idPatient, label17, label19);
         }
 
         void delete(int action)
@@ -122,6 +124,11 @@ namespace Grendezvous.Users
         private void bunifuSeparator1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            new Preview().ShowDialog();
         }
     }
 }
