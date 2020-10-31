@@ -128,7 +128,9 @@ namespace Grendezvous.Users
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            new Preview().ShowDialog();
+            Preview report = new Preview();
+            new RendevousDAO().Call_ReportPR(idPatient, report.reportViewer1, "Grendezvous.Reports.ListeRendevous2.rdlc");
+            report.ShowDialog();
         }
     }
 }

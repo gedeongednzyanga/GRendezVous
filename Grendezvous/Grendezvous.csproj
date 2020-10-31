@@ -200,6 +200,7 @@
     </Compile>
     <EmbeddedResource Include="Reports\ListeRendevous.rdlc" />
     <EmbeddedResource Include="Reports\ListeRendevous1.rdlc" />
+    <EmbeddedResource Include="Reports\ListeRendevous2.rdlc" />
     <EmbeddedResource Include="Users\AllRannule.resx">
       <DependentUpon>AllRannule.cs</DependentUpon>
     </EmbeddedResource>

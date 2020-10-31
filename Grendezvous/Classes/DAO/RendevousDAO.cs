@@ -497,5 +497,44 @@ namespace Grendezvous.Classes.DAO
             }
         }
 
+        public void Call_ReportPR(int id, ReportViewer reportView, string path)
+        {
+            try
+            {
+                if (this.con.State == ConnectionState.Closed)
+                    this.con.Open();
+                using (IDbCommand cmd = this.con.CreateCommand())
+                {
+                    cmd.CommandText = "RENDE_Patient";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(Parametre.Instance.AjouterParametre(cmd, "@idp", 10, DbType.Int32, id));
+                    SqlDataAdapter da = new SqlDataAdapter((SqlCommand)cmd);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "DataSet_Rendevous");
+                    reportView.LocalReport.DataSources.Clear();
+                    reportView.LocalReport.DataSources.Add(new ReportDataSource("DataSet_Rendevous", ds.Tables[0]));
+                    reportView.LocalReport.ReportEmbeddedResource = path;
+                    reportView.RefreshReport();
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Error " + ex.Message, "Message...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Error when Selecting data, " + ex.Message, "Selecting data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                if (this.con != null)
+                {
+                    if (this.con.State == ConnectionState.Open)
+                        this.con.Close();
+                }
+            }
+        }
+
+
     }
 }
